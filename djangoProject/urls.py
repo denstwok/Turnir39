@@ -15,8 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from teambio import views
 
-urlpatterns = {
+urlpatterns = [
     path('admin/', admin.site.urls),
-    path('signinuser/', signinuser.site.urls),
-}
+
+#Authentication
+    path('signupuser/', views.signupuser, name='signupuser '),
+
+#Team
+    path('teamprofile/', views.teamprofile, name='teamprofile'),
+]
